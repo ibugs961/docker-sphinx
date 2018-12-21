@@ -11,4 +11,8 @@ RUN apk --update add py-pip && \
     apk del --purge deps && \
     rm -rf /root/.cache /var/cache/apk/*
 
+EXPOSE 8888
+
+WORKDIR $HOME
+
 CMD /bin/sh
