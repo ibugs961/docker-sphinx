@@ -10,8 +10,7 @@ RUN apk add --no-cache python3 && \
     if [ ! -e /usr/bin/pip ]; then ln -s pip3 /usr/bin/pip ; fi && \
     if [[ ! -e /usr/bin/python ]]; then ln -sf /usr/bin/python3 /usr/bin/python; fi && \
     apk --update add -t deps git gcc libjpeg-turbo-dev musl-dev python-dev zlib-dev && \
-    pip3 install -U pip3 \
-                   sphinx==$SPHINX_VERSION Pygments setuptools \
+    pip3 install -U sphinx==$SPHINX_VERSION Pygments setuptools \
                    docutils mkdocs mock pillow \
                    git+https://github.com/rtfd/readthedocs-sphinx-ext.git \
                    sphinx-rtd-theme==$SPHINX_RTD_THEME_VERSION alabaster \
