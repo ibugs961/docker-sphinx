@@ -12,7 +12,8 @@ RUN apk add --no-cache python3 && \
     if [[ ! -e /usr/bin/python ]]; then ln -sf /usr/bin/python3 /usr/bin/python; fi && \
     rm -r /root/.cache
 
-RUN apk --update add -t deps git gcc libjpeg-turbo-dev musl-dev python-dev zlib-dev && \
+RUN apk --update add py-pip && \
+    apk --update add -t deps git gcc libjpeg-turbo-dev musl-dev python-dev zlib-dev && \
     pip install -U sphinx==$SPHINX_VERSION Pygments setuptools \
                    docutils mkdocs mock pillow \
                    git+https://github.com/rtfd/readthedocs-sphinx-ext.git \
