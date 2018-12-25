@@ -3,6 +3,7 @@ FROM alpine:3.8
 ENV SPHINX_VERSION=1.7.6
 ENV SPHINX_RTD_THEME_VERSION=0.4.2
 ENV JIE_BA_VERSION=0.39
+ENV HOME=/
 
 RUN apk add --no-cache python3 && \
     python3 -m ensurepip && \
