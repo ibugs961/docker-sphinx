@@ -6,10 +6,10 @@ ENV JIE_BA_VERSION=0.39
 
 RUN apk add --no-cache python3 && \
     python3 -m ensurepip && \
-    pip install --upgrade pip && \
     rm -r /usr/lib/python*/ensurepip && \
     if [ ! -e /usr/bin/pip ]; then ln -s pip3 /usr/bin/pip ; fi && \
     if [[ ! -e /usr/bin/python ]]; then ln -sf /usr/bin/python3 /usr/bin/python; fi && \
+    pip install --upgrade pip && \
     apk --update add -t deps git gcc libjpeg-turbo-dev musl-dev python-dev zlib-dev
 
 RUN pip install -U sphinx==$SPHINX_VERSION Pygments setuptools \
